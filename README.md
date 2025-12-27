@@ -1,98 +1,64 @@
-# Karmic_Seeds_Assignment
+# 📊 Karmic Seeds — Pricing Strategy & Data‑Driven Decision Making
 
-Pricing Strategy & Data-Driven Decision Making
-Overview
+**Author:** Gourav  
+📧 [gouravmuchhal476@gmail.com](mailto:gouravmuchhal476@gmail.com)
 
-This repository presents a structured, data-driven pricing framework developed to recommend SKU-level prices while balancing profitability, market competitiveness, and inventory risk.
+---
 
-The approach replaces reactive pricing with a repeatable, defensible decision system using cost, competitor, sales, inventory, and advertising signals.
+## Overview
+A **data‑driven pricing framework** designed to recommend **SKU‑level prices** balancing profitability, market competitiveness, and inventory risk.  
+It replaces reactive pricing with a **structured, explainable** system using cost, competition, sales, inventory, and ads data.
 
-Pricing Logic (High-Level)
+---
 
-The pricing framework follows four sequential layers:
+## Pricing Framework
 
-Cost & Margin Protection
+1. **Cost & Margin Protection:** Prices never drop below total unit cost; target gross margins applied.  
+2. **Competitive Guardrails:** Recommended prices stay within competitor ranges.  
+3. **Inventory Adjustments:** Inventory pressure (weeks of cover) drives percentile‑based discounts/premiums.  
+4. **Final Validation:** Ensures every recommendation passes cost and logic checks.
 
-Uses total_unit_cost as a pricing floor
+---
 
-Applies SKU-specific target gross margins
-
-Competitive Guardrails
-
-Recommended prices constrained within observed competitor price ranges
-
-Prevents price isolation and aggressive undercutting
-
-Inventory-Driven Adjustments
-
-Inventory pressure measured via weeks_of_cover_t30
-
-Percentile-based thresholds (top/bottom 20%) used for discounts and premiums
-
-Final Validation
-
-Ensures no recommendation falls below total unit cost
-
-Folder Structure 
-C:.
-│   README.md
+## Folder Structure
+Karmic_Seeds_Assignment/
 │
-├───data
-│   ├───processed
-│   │       ads_sku_aggregated.csv
-│   │       master_pricing_table_v1.csv
-│   │       sales_sku_aggregated.csv
-│   │
-│   └───raw
-│       │   ads_data_raw.csv
-│       │   competitor_data_raw.csv
-│       │   inventory_data_raw.csv
-│       │   pricing_data_raw.csv
-│       │   returns_data_raw.csv
-│       │   sales_data_raw.csv
-│       │
-│       └───.ipynb_checkpoints
-│               competitor_data-checkpoint.json
+├── data/
+│ ├── raw/ # Input datasets
+│ └── processed/ # Cleaned & merged data
 │
-├───notebooks
-│   │   01_data_loading_cleaning.ipynb
-│   │   02_pricing_logic.ipynb
-│   │   03_final_recommendations.ipynb
-│   │
-│   └───.ipynb_checkpoints
-│           01_data_loading_cleaning-checkpoint.ipynb
-│           02_exploratory_analysis-checkpoint.ipynb
-│           02_pricing_logic-checkpoint.ipynb
-│           03_final_recommendations-checkpoint.ipynb
+├── notebooks/
+│ ├── 01_data_loading_cleaning.ipynb
+│ ├── 02_pricing_logic.ipynb
+│ └── 03_final_recommendations.ipynb
 │
-└───outputs
-    ├───charts
-    │       chart_competitor_positioning.png
-    │       chart_inventory_vs_price_ratio.png
-    │       chart_margin_distribution.png
-    │
-    └───tables
-            executive_snapshot_recommended_prices.csv
-            recommended_prices_clean.csv
-Key Outputs
+└── outputs/
+├── charts/
+└── tables/
 
-Executive Snapshot: Prioritized SKUs for pricing intervention
+text
 
-Final Recommended Prices: SKU-level prices ready for implementation
+---
 
-Supporting Charts: Inventory impact, competitor positioning, margin distribution
+## Key Outputs
+- **Executive Snapshot:** Priority SKUs for pricing action.  
+- **Final Recommendations:** SKU‑level optimal prices.  
+- **Charts:** Margin distribution, competitor positioning, inventory impact.
 
-Business Impact
+---
 
-Protects margins while staying market-aligned
+## Usage
+Run notebooks sequentially (`01 → 03`).  
+Final outputs available in the `/outputs/` folder.
 
-Actively manages overstock and stock-out risk
+---
 
-Produces explainable, operationally usable pricing recommendations
+## Tech Stack
+**Python**, **Pandas**, **NumPy**, **Matplotlib**, **Seaborn**, **Jupyter Notebook**
 
-Usage
+---
 
-Run notebooks sequentially from 01 → 03.
-Final outputs are available in the outputs/ directory.
-
-Prepared for Pricing Strategy & Data-Driven Decision Making assignment.
+## Business Impact
+- Maintains margin discipline and competitiveness.  
+- Reduces stock‑out and overstock risk.  
+- Produces transparent, defensible pricing recommendations.
